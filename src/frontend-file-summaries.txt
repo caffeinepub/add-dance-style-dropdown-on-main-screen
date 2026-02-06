@@ -1,5 +1,5 @@
 {
-  "frontend/src/App.tsx": "Main application component with dance style selector, now featuring the dance-themed-background class applied to the root container to display Bollywood and Bharatanatyam themed background behind all content while maintaining full UI functionality and readability.",
-  "frontend/src/index.css": "Global styles with OKLCH color system and new dance-themed-background utility class that applies the generated background image with responsive cover sizing, fixed attachment, and semi-transparent overlay for readability in both light and dark modes.",
+  "frontend/src/App.tsx": "Main application component featuring a dance style dropdown selector with four options (Bollywood, Classical, Semi-classical, Indo Fusion), displaying the current selection and contextual information about each style in a card-based layout with header and footer.",
+  "frontend/src/index.css": "Global styles with a warm, Indian classical arts-inspired OKLCH color system featuring terracotta/saffron primary colors, supporting both light and dark modes with vibrant, culturally-appropriate palette.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with custom border radius values, soft shadows, and Inter font family to support the cohesive design system."
 }

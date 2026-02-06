@@ -1,47 +1,43 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Dance-themed (Bollywood + Bharatanatyam) background on main page",
+  "title": "Dance style dropdown on main screen with cohesive theme",
   "requirements": [
     {
-      "id": "REQ-6",
-      "summary": "Apply a subtle, responsive Bollywood + Bharatanatyam themed background behind the existing main-page UI without altering functionality or reducing readability.",
+      "id": "REQ-1",
+      "summary": "Add a labeled dance style dropdown on the main screen with the exact four options and show the current selection in the UI.",
       "acceptanceCriteria": [
-        "When the app loads, a dance-themed background is visible across the full main page behind the header/main/footer content.",
-        "The background includes recognizable visual cues of both Bollywood-themed dance and Bharatanatyam classical dance (e.g., silhouettes/poses, costume-inspired shapes, ornamental motifs) without using any text in the artwork.",
-        "Foreground UI components (cards, dropdown, text) remain readable; background does not overpower content (e.g., via opacity/blur/overlay treatment).",
-        "Background scales responsively across common viewport sizes without obvious tiling seams or distortion."
+        "The main screen renders a labeled dropdown control.",
+        "The dropdown contains exactly these options: Bollywood, Classical, Semi-classical, Indo Fusion.",
+        "Selecting an option updates the UI to reflect the current selection.",
+        "All user-facing text for this feature is in English."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add a global CSS utility/class for the app shell that sets the generated background image as a full-viewport background (cover/center/no-repeat) and applies a subtle overlay treatment to maintain foreground readability (including dark mode), ensuring the background stays behind content."
-        },
-        {
           "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Update the top-level app wrapper to use the new background CSS class while keeping existing layout, header/main/footer structure, and all product functionality unchanged (ensure content layers render above the background/overlay)."
+          "operation": "create",
+          "description": "Implement the main screen UI and state for the dance style selection using a native HTML select with exactly the four allowed options, an English label (e.g., \"Dance style\"), and helper text below showing the currently selected value. Ensure selection is in-memory only (no persistence across reloads)."
         }
       ]
     },
     {
-      "id": "REQ-7",
-      "summary": "Add the generated background image as a static frontend asset under frontend/public/assets/generated and reference it via CSS/background styling.",
+      "id": "REQ-2",
+      "summary": "Apply a consistent creative visual theme to the main screen and style the dropdown section without adding any new functionality.",
       "acceptanceCriteria": [
-        "The generated image file(s) exist under frontend/public/assets/generated with the exact filenames specified in this build request.",
-        "The main page uses the generated asset(s) via CSS/background styling and the app builds successfully without missing-asset errors."
+        "The main screen has a consistent visual style (background, typography, spacing).",
+        "The dropdown section looks intentionally designed and consistent with the theme.",
+        "No new functionality beyond styling/layout is introduced by this requirement."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/dance-background.dim_1920x1080.png",
+          "path": "frontend/src/index.css",
           "operation": "create",
-          "description": "Add the generated wide background illustration asset at the exact required path/filename: frontend/public/assets/generated/dance-background.dim_1920x1080.png."
+          "description": "Add the app’s global styling entry point referenced by main.tsx, including Tailwind directives and a cohesive theme foundation (e.g., background, typography defaults, spacing rhythm) that the main screen can rely on."
         },
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Reference the static asset frontend/public/assets/generated/dance-background.dim_1920x1080.png from the background styling so it is loaded directly by the frontend build (not through the backend)."
+          "description": "Refine the main screen layout and component styling to match the theme (consistent spacing, typography, background treatment, and dropdown section styling) without introducing any behavior beyond visual/layout changes."
         }
       ]
     }

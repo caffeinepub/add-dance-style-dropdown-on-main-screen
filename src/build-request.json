@@ -1,57 +1,59 @@
 {
   "kind": "build_request",
-  "title": "Add Bollywood + Bharatanatyam dance-themed background to main page",
+  "title": "Add dance style dropdown on main screen",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-6",
-      "text": "Add a dance-themed background to the main page that visually includes both Bollywood-themed elements and Bharatanatyam (classical) themed elements, and apply it behind the existing content without changing existing product functionality.",
+      "id": "REQ-1",
+      "text": "Add a dropdown input on the app’s main screen that lets the user select a dance style from: \"Bollywood\", \"Classical\", \"Semi-classical\", and \"Indo Fusion\". Display a clear label above the dropdown in English (e.g., \"Dance style\") and show the currently selected value on the screen (e.g., as helper text below the dropdown).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-1"
         ],
         "quotes": [
-          "Could you please modify the webpage with some dance themed background that includes some Bollywood themed and some Bharatanatyam classical themed."
+          "Enter dance stykes such as bollywood,classical,semi classical,indo fusion",
+          "A drop down input",
+          "Main screen"
         ]
       },
       "acceptanceCriteria": [
-        "When the app loads, a dance-themed background is visible across the full main page behind the header/main/footer content.",
-        "The background includes recognizable visual cues of both Bollywood-themed dance and Bharatanatyam classical dance (e.g., silhouettes/poses, costume-inspired shapes, ornamental motifs) without using any text in the artwork.",
-        "Foreground UI components (cards, dropdown, text) remain readable; background does not overpower content (e.g., via opacity/blur/overlay treatment).",
-        "Background scales responsively across common viewport sizes without obvious tiling seams or distortion."
+        "The main screen renders a labeled dropdown control.",
+        "The dropdown contains exactly these options: Bollywood, Classical, Semi-classical, Indo Fusion.",
+        "Selecting an option updates the UI to reflect the current selection.",
+        "All user-facing text for this feature is in English."
       ]
     },
     {
-      "id": "REQ-7",
-      "text": "Add the generated background image(s) as static frontend assets under frontend/public/assets/generated and reference them from the app styling (do not route background images through the backend).",
+      "id": "REQ-2",
+      "text": "Apply a coherent, creative visual theme for the main screen (colors, typography, spacing, and component styling) and use it consistently for the dropdown section without introducing new product features.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-1"
         ],
         "quotes": [
-          "Could you please modify the webpage with some dance themed background that includes some Bollywood themed and some Bharatanatyam classical themed."
+          "Main screen"
         ]
       },
       "acceptanceCriteria": [
-        "The generated image file(s) exist under frontend/public/assets/generated with the exact filenames specified in this build request.",
-        "The main page uses the generated asset(s) via CSS/background styling and the app builds successfully without missing-asset errors."
+        "The main screen has a consistent visual style (background, typography, spacing).",
+        "The dropdown section looks intentionally designed and consistent with the theme.",
+        "No new functionality beyond styling/layout is introduced by this requirement."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/immutablePaths (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
-    "Keep the backend as a single Motoko actor; no backend changes are required for this request."
+    "Do not modify files under frontend/src/components/ui (Shadcn UI sources must be composed, not edited).",
+    "Do not modify any files listed as immutable in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Do not add new UI features beyond applying the requested background (e.g., no new pages, no new interactive controls).",
-    "Do not implement any third-party image/CDN hosting; use local static assets only."
+    "Adding additional dance styles beyond: Bollywood, Classical, Semi-classical, Indo Fusion.",
+    "Persisting the selected dance style to the backend or across reloads.",
+    "Adding authentication changes (sign-in is out of scope for this request)."
   ],
   "imageRequirements": {
-    "required": [
-      "Dance-themed wide background illustration blending Bollywood dance energy (cinema/glamour-inspired motifs, dynamic silhouettes) with Bharatanatyam classical aesthetics (temple/kolam-inspired ornamentation, classical pose silhouette), warm saffron/terracotta palette, subtle and low-contrast (dance-background.dim_1920x1080.png)"
-    ],
+    "required": [],
     "edits": []
   },
   "userProfileUpdate": {

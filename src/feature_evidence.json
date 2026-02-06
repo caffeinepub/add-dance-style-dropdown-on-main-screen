@@ -2,8 +2,26 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-dance-themed-background-to-the-main-page-that-visually-includes-both-bollywood-themed-elements-and-bharatanatyam-classical-themed-elements-and-apply-it-behind-the-existing-content-without-changing-existing-product-functionality",
-      "featureTitle": "Add a dance-themed background to the main page that visually includes both Bollywood-themed elements and Bharatanatyam (classical) themed elements, and apply it behind the existing content without changing existing product functionality.",
+      "featureId": "feature-add-a-dropdown-input-on-the-app-s-main-screen-that-lets-the-user-select-a-dance-style-from-bollywood-classical-semi-classical-and-indo-fusion-display-a-clear-label-above-the-dropdown-in-english-e-g-dance-style-and-show-the-currently-selected-value-on-the-screen-e-g-as-helper-text-below-the-dropdown",
+      "featureTitle": "Add a dropdown input on the app’s main screen that lets the user select a dance style from: \"Bollywood\", \"Classical\", \"Semi-classical\", and \"Indo Fusion\". Display a clear label above the dropdown in English (e.g., \"Dance style\") and show the currently selected value on the screen (e.g., as helper text below the dropdown).",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-creative-visual-theme-for-the-main-screen-colors-typography-spacing-and-component-styling-and-use-it-consistently-for-the-dropdown-section-without-introducing-new-product-features",
+      "featureTitle": "Apply a coherent, creative visual theme for the main screen (colors, typography, spacing, and component styling) and use it consistently for the dropdown section without introducing new product features.",
       "files": [
         "frontend/src/App.tsx",
         "frontend/src/index.css"
@@ -16,25 +34,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-the-generated-background-image-s-as-static-frontend-assets-under-frontend-public-assets-generated-and-reference-them-from-the-app-styling-do-not-route-background-images-through-the-backend",
-      "featureTitle": "Add the generated background image(s) as static frontend assets under frontend/public/assets/generated and reference them from the app styling (do not route background images through the backend).",
-      "files": [
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
+        "REQ-2"
       ],
       "confidence": "high"
     }

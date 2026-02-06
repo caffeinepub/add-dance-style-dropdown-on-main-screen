@@ -1,14 +1,14 @@
 {
-  "backend/main.mo": "Empty Motoko actor with no defined methods.",
-  "feature_evidence.json": "Describes two frontend features adding dance-themed backgrounds and generated assets, listing affected files and components.",
-  "frontend-file-summaries.txt": "Contains brief summaries for three frontend files including App.tsx, index.css, and tailwind.config.js.",
-  "frontend/index.css": "Defines global Tailwind base variables and dark mode values, applying color and layout tokens.",
-  "frontend/index.html": "Basic HTML entry point mounting the React app and loading main.tsx.",
-  "frontend/src/App.tsx": "React UI for selecting dance styles, applying a themed background and showing contextual info.",
-  "frontend/src/hooks/useActor.ts": "Hook that creates and manages a backend actor based on Internet Identity, with query invalidation logic.",
-  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity provider and hook for login, logout, and identity state management.",
-  "frontend/src/index.css": "Global styles with OKLCH theme tokens and a dance-themed-background utility referencing a static image.",
-  "frontend/src/main.tsx": "Bootstraps the React app with QueryClient and InternetIdentityProvider.",
-  "frontend/tailwind.config.js": "Tailwind configuration extending colors, radius, shadows, fonts, and animations using CSS variable-based OKLCH tokens.",
-  "project_state.json": "Defines the project’s current state, required features, and image needs for a dance-themed app with dropdown selection, photo upload, gallery display, and background styling."
+  "backend/main.mo": "Empty Motoko actor with no methods or state.",
+  "feature_evidence.json": "Feature metadata documenting dropdown UI and theme changes with linked files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing App.tsx, index.css theme, and Tailwind config extensions.",
+  "frontend/index.css": "Tailwind base layer defining OKLCH color variables and dark mode styles for layout and components.",
+  "frontend/index.html": "Base HTML template mounting the React app at #root and loading main.tsx.",
+  "frontend/src/App.tsx": "React component rendering a styled dance-style dropdown with selection display and themed cards.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages an authenticated or anonymous backend actor and invalidates queries on identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context and provider managing Internet Identity auth state, login flow, and stored identities.",
+  "frontend/src/index.css": "Global Tailwind variables and base styles defining a warm Indian arts–inspired light/dark color palette.",
+  "frontend/src/main.tsx": "React entry point wiring QueryClient, InternetIdentityProvider, and rendering App.",
+  "frontend/tailwind.config.js": "Tailwind config enabling dark mode, custom OKLCH color tokens, extended radii, shadows, fonts, and animations.",
+  "project_state.json": "Defines project state, existing features, and pending requests for adding a dance‑style dropdown and related visual theme. Contains metadata like schema version, project name, and issue tracking arrays."
 }

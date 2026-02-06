@@ -1,56 +1,53 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-06T10:09:44.742Z",
-  "summary": "The diff applies a new CSS background utility class and attaches it to the app root, but it does not add the required generated image asset file. The diff also appears to introduce/modify UI content and broader theming changes that go beyond the request to only apply a background.",
-  "missing_requirements": [
-    {
-      "id": "REQ-7",
-      "requirement": "Add the generated background image(s) as static frontend assets under frontend/public/assets/generated with the exact filename(s) specified, and reference them from styling.",
-      "reason": "No new files were added in the diff, so the required static asset `frontend/public/assets/generated/dance-background.dim_1920x1080.png` is not present. Without the file, the CSS reference risks a missing-asset build/runtime error.",
-      "evidence": [
-        "File diff summary: \"Added: 0\" / \"ADDED FILES: none\"",
-        "frontend/src/index.css (references url('/assets/generated/dance-background.dim_1920x1080.png'))"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "requirement": "Add a dance-themed background to the main page that includes both Bollywood and Bharatanatyam elements behind existing content without changing functionality.",
-      "reason": "While styling is added to apply a background behind content, the actual required image asset is not included in the diff, so the background cannot be confirmed to load or to contain the specified Bollywood+Bharatanatyam visual cues.",
-      "evidence": [
-        "frontend/src/index.css (background-image points to /assets/generated/dance-background.dim_1920x1080.png)",
-        "File diff summary: \"Added: 0\" / \"ADDED FILES: none\""
-      ]
-    }
-  ],
+  "generatedAt": "2026-02-06T04:39:23.076Z",
+  "summary": "REQ-1 and REQ-2 appear implemented via a labeled Select dropdown on the main screen with the four specified dance styles, selection state reflected in UI, and a consistent themed layout/colors. However, the diff also introduces authentication/Internet Identity infrastructure, an actor hook, and extra informational content not requested and potentially outside the stated non-goals.",
+  "missing_requirements": [],
   "hallucinated_features": [
     {
-      "description": "Addition/expansion of a dance style selector UI (dropdown, helper text, and conditional info cards) rather than only applying a background.",
-      "reason": "The BuildRequest explicitly states non-goals: no new UI features beyond applying the requested background. The diff shows substantial UI logic and content in App.tsx (state, Select dropdown, conditional text/cards).",
+      "description": "Introduces Internet Identity authentication provider/context and related hooks (login/identity handling), which is explicitly out of scope (non-goal: no authentication changes).",
+      "reason": "BuildRequest explicitly states authentication changes (sign-in) are out of scope; diff adds InternetIdentityProvider and extensive auth logic.",
       "evidence": [
-        "frontend/src/App.tsx (adds useState selectedStyle, Select dropdown, helper text \"Currently selected:\", and conditional content blocks)"
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts"
       ]
     },
     {
-      "description": "Global theme/palette changes (OKLCH variables for warm palette; dark mode adjustments) beyond the requested background application.",
-      "reason": "The request focuses on adding a background image and ensuring readability via overlay/opacity/blur, but the diff also changes many global CSS variables for colors and charts, which is broader than necessary for the background requirement.",
+      "description": "Adds actor creation/query hook tied to identity (backend actor wiring) which is not requested for a simple dropdown UI and conflicts with non-goal of not persisting to backend.",
+      "reason": "BuildRequest does not request backend integration or actor/query setup; diff adds useActor using react-query and identity-based actor creation.",
       "evidence": [
-        "frontend/src/index.css (:root and .dark blocks redefine many design tokens like --primary, --chart-1..5, etc.)"
+        "frontend/src/hooks/useActor.ts"
       ]
     },
     {
-      "description": "Tailwind configuration extensions (custom border radius, shadows, Inter font family).",
-      "reason": "Not requested; the change summary indicates Tailwind config was modified to support a cohesive design system, which is outside the scoped request to apply a background only.",
+      "description": "Adds a backend canister file with an empty actor, which is not requested by the frontend-only UI requirements.",
+      "reason": "No backend changes are required/mentioned for adding a dropdown and theme; diff adds backend/main.mo.",
       "evidence": [
-        "frontend-file-summaries.txt (mentions modifications to frontend/tailwind.config.js)"
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Adds conditional “Info Cards”/descriptive content that changes based on selected dance style (additional content/behavior beyond showing the selected value).",
+      "reason": "REQ-1 only requires showing the currently selected value; REQ-2 forbids new functionality beyond styling/layout. Dynamic informational panels per selection constitute an extra product feature/content not requested.",
+      "evidence": [
+        "frontend/src/App.tsx"
       ]
     }
   ],
   "confidence": 0.74,
   "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
     "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
     "frontend/src/App.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
     "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

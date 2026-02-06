@@ -15,7 +15,7 @@ function App() {
   const [selectedStyle, setSelectedStyle] = useState<string>('');
 
   return (
-    <div className="min-h-screen flex flex-col dance-themed-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background via-accent/5 to-primary/5">
       {/* Header */}
       <header className="border-b border-border/40 backdrop-blur-sm bg-background/80 sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 sm:py-6">

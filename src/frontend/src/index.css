@@ -109,33 +109,3 @@
         font-feature-settings: "rlig" 1, "calt" 1;
     }
 }
-
-@layer utilities {
-    .dance-themed-background {
-        position: relative;
-        background-image: url('/assets/generated/dance-background.dim_1920x1080.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    
-    .dance-themed-background::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: oklch(var(--background) / 0.85);
-        backdrop-filter: blur(2px);
-        z-index: 0;
-    }
-    
-    .dark .dance-themed-background::before {
-        background: oklch(var(--background) / 0.88);
-        backdrop-filter: blur(3px);
-    }
-    
-    .dance-themed-background > * {
-        position: relative;
-        z-index: 1;
-    }
-}
