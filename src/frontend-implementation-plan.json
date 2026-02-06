@@ -1,0 +1,49 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Dance-themed (Bollywood + Bharatanatyam) background on main page",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "summary": "Apply a subtle, responsive Bollywood + Bharatanatyam themed background behind the existing main-page UI without altering functionality or reducing readability.",
+      "acceptanceCriteria": [
+        "When the app loads, a dance-themed background is visible across the full main page behind the header/main/footer content.",
+        "The background includes recognizable visual cues of both Bollywood-themed dance and Bharatanatyam classical dance (e.g., silhouettes/poses, costume-inspired shapes, ornamental motifs) without using any text in the artwork.",
+        "Foreground UI components (cards, dropdown, text) remain readable; background does not overpower content (e.g., via opacity/blur/overlay treatment).",
+        "Background scales responsively across common viewport sizes without obvious tiling seams or distortion."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add a global CSS utility/class for the app shell that sets the generated background image as a full-viewport background (cover/center/no-repeat) and applies a subtle overlay treatment to maintain foreground readability (including dark mode), ensuring the background stays behind content."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update the top-level app wrapper to use the new background CSS class while keeping existing layout, header/main/footer structure, and all product functionality unchanged (ensure content layers render above the background/overlay)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add the generated background image as a static frontend asset under frontend/public/assets/generated and reference it via CSS/background styling.",
+      "acceptanceCriteria": [
+        "The generated image file(s) exist under frontend/public/assets/generated with the exact filenames specified in this build request.",
+        "The main page uses the generated asset(s) via CSS/background styling and the app builds successfully without missing-asset errors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/dance-background.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated wide background illustration asset at the exact required path/filename: frontend/public/assets/generated/dance-background.dim_1920x1080.png."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/dance-background.dim_1920x1080.png from the background styling so it is loaded directly by the frontend build (not through the backend)."
+        }
+      ]
+    }
+  ]
+}

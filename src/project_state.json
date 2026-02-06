@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Create an app/website experience that includes a main-screen dropdown for selecting dance styles, supports uploading a photo to the website, and applies a dance-themed background blending Bollywood and Bharatanatyam (classical) aesthetics.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Dance-themed wide background illustration blending Bollywood dance energy (cinema/glamour-inspired motifs, dynamic silhouettes) with Bharatanatyam classical aesthetics (temple/kolam-inspired ornamentation, classical pose silhouette), warm saffron/terracotta palette, subtle and low-contrast (dance-background.dim_1920x1080.png)",
+  "existing_features": [
+    {
+      "id": "feature-add-a-dropdown-input-on-the-app-s-main-screen-that-lets-the-user-select-a-dance-style-from-bollywood-classical-semi-classical-and-indo-fusion-display-a-clear-label-above-the-dropdown-in-english-e-g-dance-style-and-show-the-currently-selected-value-on-the-screen-e-g-as-helper-text-below-the-dropdown",
+      "title": "Add a dropdown input on the app’s main screen that lets the user select a dance style from: \"Bollywood\", \"Classical\", \"Semi-classical\", and \"Indo Fusion\". Display a clear label above the dropdown in English (e.g., \"Dance style\") and show the currently selected value on the screen (e.g., as helper text below the dropdown).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-creative-visual-theme-for-the-main-screen-colors-typography-spacing-and-component-styling-and-use-it-consistently-for-the-dropdown-section-without-introducing-new-product-features",
+      "title": "Apply a coherent, creative visual theme for the main screen (colors, typography, spacing, and component styling) and use it consistently for the dropdown section without introducing new product features.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-photo-upload-ui-on-the-main-screen-that-lets-the-user-choose-an-image-file-preview-it-before-uploading-upload-it-to-the-backend-and-show-upload-success-error-states-using-english-user-facing-text",
+      "title": "Add a photo upload UI on the main screen that lets the user choose an image file, preview it before uploading, upload it to the backend, and show upload success/error states using English user-facing text.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-previously-uploaded-photos-in-the-ui-by-loading-the-photo-list-from-the-backend-and-rendering-a-simple-gallery-list-with-thumbnails-allow-viewing-a-larger-preview-of-a-selected-uploaded-photo",
+      "title": "Display previously uploaded photos in the UI by loading the photo list from the backend and rendering a simple gallery/list with thumbnails; allow viewing a larger preview of a selected uploaded photo.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dance-themed-background-to-the-main-page-that-visually-includes-both-bollywood-themed-elements-and-bharatanatyam-classical-themed-elements-and-apply-it-behind-the-existing-content-without-changing-existing-product-functionality",
+      "title": "Add a dance-themed background to the main page that visually includes both Bollywood-themed elements and Bharatanatyam (classical) themed elements, and apply it behind the existing content without changing existing product functionality.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-background-image-s-as-static-frontend-assets-under-frontend-public-assets-generated-and-reference-them-from-the-app-styling-do-not-route-background-images-through-the-backend",
+      "title": "Add the generated background image(s) as static frontend assets under frontend/public/assets/generated and reference them from the app styling (do not route background images through the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add a dropdown input on the main screen with dance styles (Bollywood, Classical, Semi-classical, Indo Fusion).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add functionality to upload a photo to the website.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement backend support for uploading and retrieving photos by adding Motoko actor methods to store photo bytes and metadata, return a stable photo id on upload, and allow listing and fetching uploaded photos for display in the UI.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Modify the webpage to use a dance-themed background that includes both Bollywood-themed and Bharatanatyam classical-themed elements.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Add dance style dropdown on main screen",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
